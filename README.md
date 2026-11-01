@@ -79,7 +79,25 @@ A 2-second debounce prevents repeated triggers.
 
 ## Serial Console
 
-115200 baud, 8N1
+### Connection
+
+Connect a USB cable from your PC to the board's **DEBUG USB** port (the on-board EDBG debugger). This exposes a USB CDC virtual COM port for the console — no separate USB-to-serial adapter is needed.
+
+Windows lists it as **"Atmel Corp. EDBG USB Port (COMxx)"** in Device Manager. If more than one EDBG-based board is connected, match the COM port to the right board by its USB instance path, or disconnect the others.
+
+### Serial settings
+
+| Setting | Value |
+|---------|-------|
+| Baud rate | 115200 |
+| Data bits | 8 |
+| Parity | None |
+| Stop bits | 1 |
+| Flow control | None |
+
+In short: **115200 8N1**, no flow control.
+
+**Note:** some terminal clients default DTR/RTS to deasserted, which can prevent the CDC port from delivering any bytes even though it opens successfully. If the console looks silent, enable DTR and RTS in your terminal's serial settings.
 
 ```
 === wolfMQTT + Edge Impulse Keyword Spotting ===
