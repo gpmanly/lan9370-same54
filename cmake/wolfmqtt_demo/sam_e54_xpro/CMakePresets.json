@@ -1,0 +1,21 @@
+{
+    "version": 6,
+    "configurePresets": [
+        {
+            "name": "wolfmqtt_demo_sam_e54_xpro_conf",
+            "binaryDir": "${fileDir}/../../../_build/wolfmqtt_demo/sam_e54_xpro",
+            "generator": "Ninja",
+            "toolchainFile": "${fileDir}/.generated/toolchain.cmake",
+            "cacheVariables": {
+                "CMAKE_USER_MAKE_RULES_OVERRIDE": {
+                    "type": "FILEPATH",
+                    "value": "${fileDir}/.generated/overrides.cmake"
+                },
+                "CMAKE_EXPORT_COMPILE_COMMANDS": {
+                    "type": "BOOL",
+                    "value": "ON"
+                }
+            }
+        }
+    ]
+}

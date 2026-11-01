@@ -1,0 +1,13 @@
+# Build artifacts
+_build/
+out/
+*.o
+*.elf
+*.hex
+*.map
+
+# IDE
+.vscode/*
+# Keep the MPLAB project file: it drives the generated CMake sources
+!.vscode/wolfmqtt_demo.mplab.json
+*.X/nbproject/private/

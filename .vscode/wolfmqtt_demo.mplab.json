@@ -1,0 +1,1757 @@
+{
+    "version": "1.9",
+    "importedFrom": "sam_e54_xpro.X",
+    "configurations": [
+        {
+            "name": "sam_e54_xpro",
+            "id": "",
+            "device": "ATSAME54P20A",
+            "imageType": "application",
+            "imagePath": "./out/wolfmqtt_demo/sam_e54_xpro.elf",
+            "toolProperties": "sam_e54_xpro-tool",
+            "tool": "EDBG",
+            "packs": [
+                {
+                    "name": "SAME54_DFP",
+                    "vendor": "Microchip",
+                    "version": "3.8.234"
+                },
+                {
+                    "name": "CMSIS",
+                    "vendor": "ARM",
+                    "version": "5.8.0"
+                }
+            ],
+            "fileSet": "Project files",
+            "toolchain": "sam_e54_xpro-XC32",
+            "includeLegacyMacros": true
+        }
+    ],
+    "propertyGroups": [
+        {
+            "name": "sam_e54_xpro-XC32",
+            "type": "toolchain",
+            "provider": "microchip.toolchains:xc32@5.10",
+            "properties": {
+                "compiler.exclude-floating-point": false,
+                "compiler.extra-include-directories": [
+                    "src",
+                    "src/app_config/non_gui/16K",
+                    "src/config/sam_e54_xpro",
+                    "src/config/sam_e54_xpro/library",
+                    "src/config/sam_e54_xpro/library/tcpip/src",
+                    "src/config/sam_e54_xpro/library/tcpip/src/common",
+                    "src/config/sam_e54_xpro/third_party_adapter/wolfMQTT/src",
+                    "src/edge-impulse-sdk",
+                    "src/edge-impulse-sdk/CMSIS/DSP/Include",
+                    "src/edge-impulse-sdk/CMSIS/DSP/PrivateInclude",
+                    "src/edge-impulse-sdk/CMSIS/NN/Include",
+                    "src/model-parameters",
+                    "src/packs/ATSAME54P20A_DFP",
+                    "src/packs/CMSIS",
+                    "src/packs/CMSIS/CMSIS/Core/Include",
+                    "src/tflite-model",
+                    "src/third_party/wolfMQTT",
+                    "src/third_party/wolfssl",
+                    "src/third_party/wolfssl/wolfssl"
+                ],
+                "compiler.isolate-each-function": true,
+                "compiler.optimization-level": "-O1",
+                "compiler.place-data-into-section": "true",
+                "compiler.post-instruction-scheduling": "default",
+                "compiler.pre-instruction-scheduling": "default",
+                "compiler.preprocessor-macros": [
+                    "ARM_ALL_FAST_TABLES",
+                    "ARM_DSP_CONFIG_TABLES",
+                    "ARM_FAST_ALLOW_TABLES",
+                    "ARM_FFT_ALLOW_TABLES",
+                    "ARM_TABLE_BITREVIDX_FLT_256",
+                    "ARM_TABLE_REALCOEF_F32",
+                    "ARM_TABLE_TWIDDLECOEF_F32_256",
+                    "ARM_TABLE_TWIDDLECOEF_RFFT_F32_512",
+                    "EIDSP_USE_CMSIS_DSP=1",
+                    "EI_CLASSIFIER_SLICES_PER_MODEL_WINDOW=4",
+                    "HAVE_CONFIG_H",
+                    "WOLFSSL_IGNORE_FILE_WARN",
+                    "__TARGET_CPU_CORTEX_M4"
+                ],
+                "compiler.tentative-definitions": "-fno-common",
+                "compiler++.exclude-floating-point": false,
+                "compiler++.extra-include-directories": [
+                    "src",
+                    "src/app_config/non_gui/16K",
+                    "src/config/sam_e54_xpro",
+                    "src/config/sam_e54_xpro/library",
+                    "src/config/sam_e54_xpro/library/tcpip/src",
+                    "src/config/sam_e54_xpro/library/tcpip/src/common",
+                    "src/config/sam_e54_xpro/third_party_adapter/wolfMQTT/src",
+                    "src/edge-impulse-sdk",
+                    "src/edge-impulse-sdk/third_party/flatbuffers/include",
+                    "src/edge-impulse-sdk/third_party/gemmlowp",
+                    "src/edge-impulse-sdk/third_party/ruy",
+                    "src/model-parameters",
+                    "src/packs/ATSAME54P20A_DFP",
+                    "src/packs/CMSIS",
+                    "src/packs/CMSIS/CMSIS/Core/Include",
+                    "src/tflite-model",
+                    "src/third_party/wolfMQTT",
+                    "src/third_party/wolfssl",
+                    "src/third_party/wolfssl/wolfssl"
+                ],
+                "compiler++.isolate-each-function": "true",
+                "compiler++.post-instruction-scheduling": "default",
+                "compiler++.pre-instruction-scheduling": "default",
+                "compiler++.preprocessor-macros": [
+                    "__TARGET_CPU_CORTEX_M4",
+                    "EI_CLASSIFIER_SLICES_PER_MODEL_WINDOW=4",
+                    "EIDSP_USE_CMSIS_DSP=1"
+                ],
+                "assembler.extra-include-directories-for-assembler": "sam_e54_xpro.X",
+                "assembler.extra-include-directories-for-preprocessor": "sam_e54_xpro.X",
+                "archiver.additional-options-chop-files": false,
+                "linker.additional-options-use-response-files": false,
+                "linker.exclude-floating-point-library": false,
+                "linker.extra-lib-directories": "sam_e54_xpro.X",
+                "linker.fill-flash-options-inc-const": "1",
+                "linker.fill-flash-options-what": "0",
+                "linker.heap-size": "122960",
+                "linker.no-device-startup-code": true,
+                "linker.remove-unused-sections": "true",
+                "linker.report-memory-usage": false,
+                "global.legacy-libc": false,
+                "C32Global.mstacktcm": "false",
+                "compiler++.optimization-level": "-O1"
+            }
+        },
+        {
+            "name": "sam_e54_xpro-tool",
+            "type": "tool",
+            "properties": {
+                "AutoSelectMemRanges": "auto",
+                "arm.use_vtor": false,
+                "arm.vtor_adr": "exception_table",
+                "communication.activationmode": "nohv",
+                "communication.interface": "swd",
+                "communication.speed": "2.000",
+                "debugoptions.debug-startup": "Use system settings",
+                "debugoptions.reset-behaviour": "Use system settings",
+                "debugoptions.useswbreakpoints": false,
+                "event.recorder.enabled": false,
+                "firmware.path": "Press to browse for a specific firmware version",
+                "firmware.toolpack": "Press to select which tool pack to use",
+                "firmware.update.action": "firmware.update.use.latest",
+                "freeze.timers": false,
+                "loader.board_file": "${ProjectDir}/board.xboard",
+                "memories.aux": false,
+                "memories.bootflash": true,
+                "memories.configurationmemory": true,
+                "memories.configurationmemory2": true,
+                "memories.dataflash": true,
+                "memories.eeprom": true,
+                "memories.exclude.configurationmemory": true,
+                "memories.flashdata": true,
+                "memories.id": true,
+                "memories.instruction.ram.ranges": "${memories.instruction.ram.ranges}",
+                "memories.programmemory": true,
+                "memories.programmemory.ranges": "0-fffff",
+                "memories.rww": true,
+                "poweroptions.powerenable": false,
+                "programmerToGoFilePath": "D:/microchip/h3/net_apps_sam_e5x/apps/wolfmqtt_demo/firmware/sam_e54_xpro.X/debug/sam_e54_xpro/sam_e54_xpro_ptg",
+                "programoptions.eraseb4program": true,
+                "programoptions.preservedataflash": false,
+                "programoptions.preservedataflash.ranges": "${memories.dataflash.default}",
+                "programoptions.preserveeeprom": false,
+                "programoptions.preserveprogramrange": false,
+                "programoptions.preserveuserid": false,
+                "programoptions.programuserotp": false,
+                "script.has_reset": true,
+                "script.log_level": "0",
+                "script.reset_delay": "0",
+                "script.show_output": false,
+                "toolpack.updateoptions": "toolpack.updateoptions.uselatestoolpack",
+                "toolpack.updateoptions.packversion": "Press to select which tool pack to use",
+                "x.erase.clearprot": true
+            }
+        }
+    ],
+    "fileSets": [
+        {
+            "name": "Project files",
+            "files": [
+                {
+                    "include": "src/config/sam_e54_xpro/bsp/*",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/*",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/crypto/**/*",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/driver/**/*",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/library/tcpip/**/*",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/net_pres/pres/**/*",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/osal/*",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/peripheral/clock/*",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/peripheral/cmcc/*",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/peripheral/evsys/*",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/peripheral/mpu/*",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/peripheral/nvic/*",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/peripheral/nvmctrl/*",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/peripheral/port/*",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/peripheral/sercom/usart/*",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/peripheral/tc/*",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/system/**/*",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/third_party_adapter/wolfMQTT/src/*",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/packs/ATSAME54P20A_DFP/**/*",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/packs/CMSIS/CMSIS/Core/Include/*",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfMQTT/wolfmqtt/*",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/*",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/openssl/*",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/*",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/*",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/stdio/*",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfMQTT/src/*",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/src/*",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/*",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/*",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "sam_e54_xpro.X/*",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/*{.c,.h}",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/peripheral/nvmctrl/plib_nvmctrl.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/library/tcpip/src/icmp.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/third_party_adapter/wolfMQTT/src/mqtt_net_glue.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfMQTT/src/mqtt_client.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfMQTT/src/mqtt_packet.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfMQTT/src/mqtt_socket.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/app_mqtt_commands.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/app_mqtt_task.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/library/tcpip/src/nbns.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/src/conf.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/src/crl.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/src/dtls13.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/src/keys.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/src/ocsp.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/src/pk.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/src/sniffer.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/src/ssl.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/src/tls.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/src/tls13.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/src/wolfio.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/src/x509.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/src/x509_str.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/src/internal.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/library/tcpip/src/tcp.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/audio/driver/i2s/src/drv_i2s.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/library/tcpip/src/arp.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/library/tcpip/src/icmpv6.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/peripheral/tc/plib_tc0.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/peripheral/tc/plib_tc2.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/system/time/src/sys_time.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/driver/i2c/src/drv_i2c.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/library/tcpip/src/ndp.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/library/tcpip/src/tcpip_commands.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/driver/ethphy/src/dynamic/drv_ethphy.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/driver/ethphy/src/dynamic/drv_extphy_ksz8091.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/library/tcpip/src/ipv6.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/bsp/bsp.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/library/tcpip/src/ipv4.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/system/console/src/sys_console_uart.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/system/int/src/sys_int.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/system/cache/sys_cache.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/system/dma/sys_dma.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/system/reset/sys_reset.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/app.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/tasks.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/library/tcpip/src/tcpip_heap_alloc.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/library/tcpip/src/tcpip_heap_internal.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/library/tcpip/src/dhcp.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/library/tcpip/src/dns.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/library/tcpip/src/helpers.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/library/tcpip/src/hash_fnv.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/library/tcpip/src/oahash.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/library/tcpip/src/tcpip_helpers.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/library/tcpip/src/tcpip_manager.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/library/tcpip/src/tcpip_notify.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/library/tcpip/src/tcpip_packet.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/system/sys_time_h2_adapter.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/system/sys_random_h2_adapter.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/driver/gmac/src/dynamic/drv_gmac.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/driver/gmac/src/dynamic/drv_gmac_lib_samE5x.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/peripheral/sercom/usart/plib_sercom1_usart.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/peripheral/evsys/plib_evsys.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/system/command/src/sys_command.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/peripheral/sercom/i2c_master/plib_sercom6_i2c_master.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/initialization.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/interrupts.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/exceptions.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/ATSAME54P20A.ld",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/stdio/xc32_monitor.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/peripheral/port/plib_port.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/peripheral/clock/plib_clock.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/peripheral/nvic/plib_nvic.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/peripheral/mpu/plib_mpu.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/peripheral/dmac/plib_dmac.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/peripheral/cmcc/plib_cmcc.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/startup_xc32.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/libc_syscalls.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/library/tcpip/src/sntp.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/library/tcpip/src/udp.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/driver/miim/src/dynamic/drv_miim.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/driver/miim/src/dynamic/drv_miim_gmac.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/system/debug/src/sys_debug.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/arc4.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/asm.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/asn.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/blake2b.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/blake2s.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/camellia.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/chacha.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/chacha20_poly1305.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/cmac.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/coding.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/compress.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/cpuid.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/cryptocb.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/curve25519.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/curve448.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/dh.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/dsa.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/ecc.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/eccsi.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/ecc_fp.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/ed25519.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/ed448.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/error.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/falcon.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/fe_448.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/fe_low_mem.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/fe_operations.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/ge_448.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/ge_low_mem.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/ge_operations.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/hash.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/hmac.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/integer.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/kdf.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/logging.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/md2.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/md4.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/md5.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/memory.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/pkcs12.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/pkcs7.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/poly1305.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/pwdbased.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/rc2.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/ripemd.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/rsa.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/sakke.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/sha3.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/signature.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/siphash.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/sp_arm32.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/sp_arm64.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/sp_armthumb.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/sp_c32.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/sp_c64.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/sp_cortexm.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/sp_dsp32.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/sp_int.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/sp_x86_64.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/srp.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/tfm.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/wc_dsp.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/wc_encrypt.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/wc_pkcs11.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/wc_port.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/wolfevent.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/wolfmath.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/pic32mz-crypt.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/crypt_aes_sam6149.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/crypt_aes_u2238.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/crypt_ecc_ba414e.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/crypt_ecc_pukcl.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/crypt_pukcl_functions.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/crypt_rng_sam6334.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/crypt_rng_u2242.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/crypt_rsa_pukcl.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/crypt_sam_u2803.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/crypt_sha1_sam11105.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/crypt_sha1_sam6156.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/crypt_sha224_sam11105.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/crypt_sha224_sam6156.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/crypt_sha256_sam11105.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/crypt_sha256_sam6156.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/crypt_sha384_sam6156.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/crypt_sha512_sam6156.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/crypt_tdes_sam6150.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/port/pic32/crypt_wolfcryptcb.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/aes.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/des3.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/random.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/sha.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/sha256.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/sha512.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/misc.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/third_party/wolfssl/wolfssl/wolfcrypt/src/evp.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/net_pres/pres/src/net_pres.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/net_pres/pres/net_pres_enc_glue.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/net_pres/pres/net_pres_cert_store.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/audio/peripheral/i2s/plib_i2s.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/system/console/src/sys_console.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/crypto/src/crypto.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "src/config/sam_e54_xpro/audio/driver/codec/wm8904/drv_wm8904.c",
+                    "encoding": "ISO-8859-1"
+                },
+                "src/config/sam_e54_xpro/audio/driver/i2s/drv_i2s_definitions.h",
+                "src/config/sam_e54_xpro/audio/driver/i2s/drv_i2s.h",
+                "src/config/sam_e54_xpro/audio/driver/i2s/drv_i2s_local.h",
+                "src/config/sam_e54_xpro/audio/peripheral/i2s/plib_i2s.h",
+                "src/config/sam_e54_xpro/audio/driver/codec/wm8904/drv_wm8904_local.h",
+                "src/config/sam_e54_xpro/audio/driver/codec/wm8904/drv_wm8904.h",
+                "src/config/sam_e54_xpro/peripheral/dmac/plib_dmac.h",
+                "src/config/sam_e54_xpro/peripheral/sercom/i2c_master/plib_sercom_i2c_master_common.h",
+                "src/config/sam_e54_xpro/peripheral/sercom/i2c_master/plib_sercom6_i2c_master.h",
+                "src/app_config/non_gui/16K/app_config.h",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_conv_fast_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_conv_opt_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_correlate_fast_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_fir_decimate_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_fir_interpolate_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_fir_interpolate_init_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_fir_interpolate_init_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_fir_interpolate_init_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_fir_interpolate_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_fir_lattice_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_fir_lattice_init_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_fir_lattice_init_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_fir_lattice_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_fir_lattice_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_fir_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_fir_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_fir_q7.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_fir_sparse_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_fir_sparse_init_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_fir_sparse_init_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_fir_sparse_init_q7.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_fir_sparse_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_fir_sparse_q7.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_iir_lattice_init_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_iir_lattice_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_lms_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_lms_init_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_lms_norm_init_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_biquad_cascade_df1_32x64_init_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_biquad_cascade_df1_fast_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_biquad_cascade_df1_init_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_biquad_cascade_df1_init_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_biquad_cascade_df2T_init_f64.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_biquad_cascade_stereo_df2T_init_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_conv_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_conv_fast_opt_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_conv_fast_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_conv_opt_q7.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_conv_partial_q7.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_conv_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_correlate_opt_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_correlate_opt_q7.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_correlate_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_correlate_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_fir_decimate_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_fir_fast_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_fir_fast_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_fir_init_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_fir_init_q7.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_fir_interpolate_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_fir_sparse_init_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_fir_sparse_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_iir_lattice_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_iir_lattice_init_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_iir_lattice_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_lms_init_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_lms_norm_init_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_lms_norm_init_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_biquad_cascade_df1_32x64_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_biquad_cascade_df1_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_biquad_cascade_df1_fast_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_biquad_cascade_df1_init_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_biquad_cascade_df1_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_biquad_cascade_df1_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_biquad_cascade_df2T_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_biquad_cascade_df2T_f64.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_biquad_cascade_df2T_init_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_biquad_cascade_stereo_df2T_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_conv_partial_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_conv_partial_fast_opt_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_conv_partial_fast_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_conv_partial_fast_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_conv_partial_opt_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_conv_partial_opt_q7.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_conv_partial_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_conv_partial_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_conv_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_conv_q7.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_correlate_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_correlate_fast_opt_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_correlate_fast_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_correlate_q7.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_fir_decimate_fast_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_fir_decimate_fast_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_fir_decimate_init_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_fir_decimate_init_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_fir_decimate_init_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_fir_decimate_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_fir_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_fir_init_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_fir_init_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_fir_lattice_init_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_iir_lattice_init_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_lms_init_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_lms_norm_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/MatrixFunctions/arm_mat_add_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/MatrixFunctions/arm_mat_cmplx_mult_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/MatrixFunctions/arm_mat_cmplx_mult_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/MatrixFunctions/arm_mat_cmplx_mult_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/MatrixFunctions/arm_mat_add_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/MatrixFunctions/arm_mat_add_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/MatrixFunctions/arm_mat_inverse_f64.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/MatrixFunctions/arm_mat_inverse_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/MatrixFunctions/arm_mat_init_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_fast_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_fast_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/MatrixFunctions/arm_mat_mult_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/MatrixFunctions/arm_mat_scale_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/MatrixFunctions/arm_mat_sub_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/MatrixFunctions/arm_mat_sub_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/MatrixFunctions/arm_mat_scale_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/MatrixFunctions/arm_mat_scale_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/MatrixFunctions/arm_mat_trans_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/MatrixFunctions/arm_mat_sub_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/MatrixFunctions/arm_mat_trans_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/MatrixFunctions/arm_mat_trans_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/ControllerFunctions/arm_sin_cos_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/ControllerFunctions/arm_sin_cos_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/ControllerFunctions/arm_pid_reset_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/ControllerFunctions/arm_pid_reset_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/ControllerFunctions/arm_pid_reset_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/ControllerFunctions/arm_pid_init_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/ControllerFunctions/arm_pid_init_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/ControllerFunctions/arm_pid_init_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FastMathFunctions/arm_cos_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FastMathFunctions/arm_sin_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FastMathFunctions/arm_sin_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FastMathFunctions/arm_sin_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FastMathFunctions/arm_cos_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FastMathFunctions/arm_cos_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FastMathFunctions/arm_sqrt_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FastMathFunctions/arm_sqrt_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FastMathFunctions/arm_vexp_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FastMathFunctions/arm_vlog_f32.c",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/all_ops_resolver.h",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/debug_log.h",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/kernels/unpack.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/kernels/tanh.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/kernels/svdf.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/kernels/sub.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/kernels/strided_slice.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/kernels/split.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/kernels/softmax.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/kernels/scratch_buf_mgr.h",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/kernels/scratch_buf_mgr.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/kernels/scratch_buffers.h",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/kernels/scratch_buffers.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/kernels/round.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/kernels/resize_nearest_neighbor.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/kernels/reshape.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/kernels/reduce.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/kernels/quantize.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/kernels/prelu.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/kernels/pooling.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/kernels/pad.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/kernels/pack.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/kernels/neg.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/kernels/mul.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/kernels/mli_tf_utils.h",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/kernels/mli_slicers.h",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/kernels/mli_slicers.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/kernels/micro_utils.h",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/kernels/micro_ops.h",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/kernels/maximum_minimum.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/kernels/logistic.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/kernels/logical.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/kernels/l2norm.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/kernels/fully_connected.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/kernels/floor.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/kernels/ethosu.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/kernels/elementwise.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/kernels/dequantize.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/kernels/depthwise_conv.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/kernels/conv.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/kernels/concatenation.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/kernels/comparisons.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/kernels/circular_buffer.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/kernels/ceil.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/kernels/arg_min_max.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/kernels/add.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/kernels/activation_utils.h",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/kernels/activations.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/memory_helpers.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/micro_error_reporter.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/micro_interpreter.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/micro_interpreter.h",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/micro_mutable_op_resolver.h",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/micro_optional_debug_tools.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/recording_micro_allocator.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/recording_micro_interpreter.h",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/recording_simple_memory_allocator.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/testing/test_conv_model.h",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/testing/test_conv_model.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/testing/micro_test.h",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/testing/test_utils.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/testing/test_utils.h",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/TransformFunctions/arm_cfft_f64.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/TransformFunctions/arm_cfft_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/TransformFunctions/arm_cfft_f16.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/TransformFunctions/arm_bitreversal2.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/TransformFunctions/arm_bitreversal.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/TransformFunctions/arm_cfft_radix2_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/TransformFunctions/arm_cfft_radix2_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/TransformFunctions/arm_cfft_radix2_init_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/TransformFunctions/arm_cfft_radix2_init_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/TransformFunctions/arm_cfft_radix2_init_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/TransformFunctions/arm_cfft_radix2_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/TransformFunctions/arm_cfft_radix2_f16.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/TransformFunctions/arm_cfft_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/TransformFunctions/arm_cfft_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/TransformFunctions/arm_cfft_init_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/TransformFunctions/arm_cfft_init_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/TransformFunctions/arm_cfft_init_f64.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/TransformFunctions/arm_cfft_init_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/TransformFunctions/arm_cfft_init_f16.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/TransformFunctions/arm_cfft_radix4_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/TransformFunctions/arm_cfft_radix4_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/TransformFunctions/arm_cfft_radix4_init_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/TransformFunctions/arm_cfft_radix4_init_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/TransformFunctions/arm_cfft_radix4_init_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/TransformFunctions/arm_cfft_radix4_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/TransformFunctions/arm_cfft_radix4_f16.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/TransformFunctions/arm_dct4_init_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/TransformFunctions/arm_dct4_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/TransformFunctions/arm_cfft_radix8_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/TransformFunctions/arm_dct4_init_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/TransformFunctions/arm_dct4_init_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/TransformFunctions/arm_dct4_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/TransformFunctions/arm_rfft_fast_init_f64.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/TransformFunctions/arm_rfft_fast_init_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/TransformFunctions/arm_rfft_fast_f64.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/TransformFunctions/arm_rfft_fast_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/TransformFunctions/arm_rfft_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/TransformFunctions/arm_dct4_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/TransformFunctions/arm_rfft_init_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/TransformFunctions/arm_rfft_init_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/TransformFunctions/arm_rfft_init_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/TransformFunctions/arm_rfft_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/TransformFunctions/arm_rfft_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/TransformFunctions/TransformFunctionsF16.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/SupportFunctions/arm_barycenter_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/SupportFunctions/arm_bitonic_sort_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/SupportFunctions/arm_bubble_sort_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/SupportFunctions/arm_merge_sort_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/SupportFunctions/arm_insertion_sort_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/SupportFunctions/arm_heap_sort_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/SupportFunctions/arm_float_to_q7.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/SupportFunctions/arm_float_to_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/SupportFunctions/arm_float_to_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/SupportFunctions/arm_fill_q7.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/SupportFunctions/arm_fill_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/SupportFunctions/arm_fill_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/SupportFunctions/arm_fill_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/SupportFunctions/arm_copy_q7.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/SupportFunctions/arm_copy_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/SupportFunctions/arm_copy_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/SupportFunctions/arm_copy_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/SupportFunctions/arm_q7_to_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/SupportFunctions/arm_q7_to_float.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/SupportFunctions/arm_q31_to_q7.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/SupportFunctions/arm_q31_to_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/SupportFunctions/arm_q31_to_float.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/SupportFunctions/arm_q15_to_q7.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/SupportFunctions/arm_q15_to_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/SupportFunctions/arm_q15_to_float.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/SupportFunctions/arm_merge_sort_init_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/SupportFunctions/arm_sort_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/SupportFunctions/arm_selection_sort_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/SupportFunctions/arm_quick_sort_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/SupportFunctions/arm_q7_to_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/SupportFunctions/arm_spline_interp_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/SupportFunctions/arm_sort_init_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/SupportFunctions/arm_spline_interp_init_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/SupportFunctions/arm_weighted_sum_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/SVMFunctions/arm_svm_sigmoid_predict_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/SVMFunctions/arm_svm_sigmoid_init_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/SVMFunctions/arm_svm_rbf_predict_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/SVMFunctions/arm_svm_rbf_init_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/SVMFunctions/arm_svm_polynomial_predict_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/SVMFunctions/arm_svm_polynomial_init_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/SVMFunctions/arm_svm_linear_predict_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/SVMFunctions/arm_svm_linear_init_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/StatisticsFunctions/arm_var_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/StatisticsFunctions/arm_var_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/StatisticsFunctions/arm_var_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/StatisticsFunctions/arm_std_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/StatisticsFunctions/arm_std_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/StatisticsFunctions/arm_std_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/StatisticsFunctions/arm_rms_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/StatisticsFunctions/arm_rms_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/StatisticsFunctions/arm_rms_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/StatisticsFunctions/arm_power_q7.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/StatisticsFunctions/arm_power_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/StatisticsFunctions/arm_power_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/StatisticsFunctions/arm_power_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/StatisticsFunctions/arm_min_q7.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/StatisticsFunctions/arm_min_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/StatisticsFunctions/arm_min_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/StatisticsFunctions/arm_min_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/StatisticsFunctions/arm_mean_q7.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/StatisticsFunctions/arm_mean_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/StatisticsFunctions/arm_mean_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/StatisticsFunctions/arm_mean_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/StatisticsFunctions/arm_max_q7.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/StatisticsFunctions/arm_max_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/StatisticsFunctions/arm_max_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/StatisticsFunctions/arm_max_no_idx_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/StatisticsFunctions/arm_max_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/StatisticsFunctions/arm_logsumexp_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/StatisticsFunctions/arm_logsumexp_dot_prod_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/StatisticsFunctions/arm_kullback_leibler_f64.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/StatisticsFunctions/arm_kullback_leibler_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/StatisticsFunctions/arm_entropy_f64.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/StatisticsFunctions/arm_entropy_f32.c",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/all_ops_resolver.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/memory_helpers.h",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/memory_planner/linear_memory_planner.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/memory_planner/greedy_memory_planner.h",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/memory_planner/greedy_memory_planner.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/memory_planner/linear_memory_planner.h",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/memory_planner/memory_planner.h",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/micro_allocator.h",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/micro_optional_debug_tools.h",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/micro_allocator.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/micro_profiler.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/micro_string.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/micro_string.h",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/micro_time.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/micro_time.h",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/micro_utils.h",
+                "src/edge-impulse-sdk/anomaly/anomaly.h",
+                "src/edge-impulse-sdk/classifier/ei_classifier_types.h",
+                "src/edge-impulse-sdk/classifier/ei_classifier_smooth.h",
+                "src/edge-impulse-sdk/classifier/ei_classifier_config.h",
+                "src/edge-impulse-sdk/classifier/ei_aligned_malloc.h",
+                "src/edge-impulse-sdk/classifier/ei_run_classifier.h",
+                "src/edge-impulse-sdk/classifier/ei_model_types.h",
+                "src/edge-impulse-sdk/classifier/ei_run_classifier_image.h",
+                "src/edge-impulse-sdk/classifier/ei_run_dsp.h",
+                "src/edge-impulse-sdk/dsp/config.hpp",
+                "src/edge-impulse-sdk/dsp/numpy.hpp",
+                "src/edge-impulse-sdk/dsp/memory.hpp",
+                "src/edge-impulse-sdk/dsp/memory.cpp",
+                "src/edge-impulse-sdk/dsp/returntypes.hpp",
+                "src/edge-impulse-sdk/dsp/numpy_types.h",
+                "src/edge-impulse-sdk/dsp/kissfft/_kiss_fft_guts.h",
+                "src/edge-impulse-sdk/dsp/kissfft/kiss_fftr.h",
+                "src/edge-impulse-sdk/dsp/kissfft/kiss_fftr.cpp",
+                "src/edge-impulse-sdk/dsp/kissfft/kiss_fft.h",
+                "src/edge-impulse-sdk/dsp/kissfft/kiss_fft.cpp",
+                "src/edge-impulse-sdk/dsp/kissfft/kissfft.h",
+                "src/edge-impulse-sdk/dsp/spectral/feature.hpp",
+                "src/edge-impulse-sdk/dsp/spectral/filters.hpp",
+                "src/edge-impulse-sdk/dsp/speechpy/functions.hpp",
+                "src/edge-impulse-sdk/dsp/speechpy/feature.hpp",
+                "src/edge-impulse-sdk/dsp/speechpy/processing.hpp",
+                "src/edge-impulse-sdk/dsp/speechpy/speechpy.hpp",
+                "src/edge-impulse-sdk/dsp/dct/fast-dct-fft.cpp",
+                "src/edge-impulse-sdk/dsp/dct/fast-dct-fft.h",
+                "src/edge-impulse-sdk/dsp/spectral/fir_filter.hpp",
+                "src/edge-impulse-sdk/dsp/spectral/processing.hpp",
+                "src/edge-impulse-sdk/dsp/spectral/spectral.hpp",
+                "src/edge-impulse-sdk/porting/ei_classifier_porting.h",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/micro_utils.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/schema/schema_generated.h",
+                "src/edge-impulse-sdk/tensorflow/lite/string_util.h",
+                "src/model-parameters/model_metadata.h",
+                "src/model-parameters/dsp_blocks.h",
+                "src/tflite-model/trained_model_compiled.h",
+                "src/tflite-model/trained_model_compiled.cpp",
+                "src/edge-impulse-sdk/third_party/flatbuffers/include/flatbuffers/stl_emulation.h",
+                "src/edge-impulse-sdk/third_party/flatbuffers/include/flatbuffers/flatbuffers.h",
+                "src/edge-impulse-sdk/third_party/flatbuffers/include/flatbuffers/base.h",
+                "src/edge-impulse-sdk/third_party/arc_mli_package/include/mli_types.h",
+                "src/edge-impulse-sdk/third_party/arc_mli_package/include/mli_config.h",
+                "src/edge-impulse-sdk/third_party/arc_mli_package/include/mli_api.h",
+                "src/edge-impulse-sdk/CMSIS/NN/Include/arm_nn_types.h",
+                "src/edge-impulse-sdk/CMSIS/NN/Include/arm_nn_tables.h",
+                "src/edge-impulse-sdk/CMSIS/NN/Include/arm_nnsupportfunctions.h",
+                "src/edge-impulse-sdk/CMSIS/NN/Include/arm_nnfunctions.h",
+                "src/edge-impulse-sdk/third_party/gemmlowp/internal/detect_platform.h",
+                "src/edge-impulse-sdk/third_party/arc_mli_package/include/api/mli_mov_api.h",
+                "src/edge-impulse-sdk/third_party/arc_mli_package/include/api/mli_krn_maxpool_spec_api.h",
+                "src/edge-impulse-sdk/third_party/arc_mli_package/include/api/mli_krn_depthwise_conv2d_spec_api.h",
+                "src/edge-impulse-sdk/third_party/arc_mli_package/include/api/mli_krn_conv2d_spec_api.h",
+                "src/edge-impulse-sdk/third_party/arc_mli_package/include/api/mli_krn_avepool_spec_api.h",
+                "src/edge-impulse-sdk/third_party/arc_mli_package/include/api/mli_kernels_api.h",
+                "src/edge-impulse-sdk/third_party/arc_mli_package/include/api/mli_helpers_api.h",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/SoftmaxFunctions/arm_softmax_with_batch_q7.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/SoftmaxFunctions/arm_softmax_u8.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/SoftmaxFunctions/arm_softmax_s8.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/SoftmaxFunctions/arm_softmax_q7.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/SoftmaxFunctions/arm_softmax_q15.c",
+                "src/edge-impulse-sdk/third_party/gemmlowp/fixedpoint/fixedpoint_sse.h",
+                "src/edge-impulse-sdk/third_party/gemmlowp/fixedpoint/fixedpoint_neon.h",
+                "src/edge-impulse-sdk/third_party/gemmlowp/fixedpoint/fixedpoint.h",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/ConvolutionFunctions/arm_nn_mat_mult_s8.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/ConvolutionFunctions/arm_nn_mat_mult_kernel_s8_s16_reordered.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/ConvolutionFunctions/arm_nn_mat_mult_kernel_s8_s16.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/ConvolutionFunctions/arm_nn_mat_mult_kernel_q7_q15_reordered.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/ConvolutionFunctions/arm_nn_mat_mult_kernel_q7_q15.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/ConvolutionFunctions/arm_nn_depthwise_conv_s8_core.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/ConvolutionFunctions/arm_depthwise_separable_conv_HWC_q7_nonsquare.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/ConvolutionFunctions/arm_depthwise_separable_conv_HWC_q7.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/ConvolutionFunctions/arm_depthwise_conv_u8_basic_ver1.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/ConvolutionFunctions/arm_depthwise_conv_s8_opt.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/ConvolutionFunctions/arm_depthwise_conv_s8.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/ConvolutionFunctions/arm_depthwise_conv_3x3_s8.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/ConvolutionFunctions/arm_convolve_wrapper_s8.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/ConvolutionFunctions/arm_convolve_s8.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/ConvolutionFunctions/arm_convolve_HWC_q7_RGB.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/ConvolutionFunctions/arm_convolve_HWC_q7_fast_nonsquare.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/ConvolutionFunctions/arm_convolve_HWC_q7_fast.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/ConvolutionFunctions/arm_convolve_HWC_q7_basic_nonsquare.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/ConvolutionFunctions/arm_convolve_HWC_q7_basic.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/ConvolutionFunctions/arm_convolve_HWC_q15_fast_nonsquare.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/ConvolutionFunctions/arm_convolve_HWC_q15_fast.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/ConvolutionFunctions/arm_convolve_HWC_q15_basic.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/ConvolutionFunctions/arm_convolve_1_x_n_s8.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/ConvolutionFunctions/arm_convolve_1x1_s8_fast.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/ConvolutionFunctions/arm_convolve_1x1_HWC_q7_fast_nonsquare.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/ReshapeFunctions/arm_reshape_s8.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/NNSupportFunctions/arm_q7_to_q15_with_offset.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/NNSupportFunctions/arm_q7_to_q15_reordered_with_offset.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/NNSupportFunctions/arm_q7_to_q15_reordered_no_shift.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/NNSupportFunctions/arm_q7_to_q15_no_shift.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/NNSupportFunctions/arm_nn_vec_mat_mult_t_s8.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/NNSupportFunctions/arm_nn_mult_q7.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/NNSupportFunctions/arm_nn_mult_q15.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/NNSupportFunctions/arm_nn_mat_mul_core_4x_s8.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/NNSupportFunctions/arm_nn_mat_mul_core_1x_s8.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/NNSupportFunctions/arm_nn_mat_mult_nt_t_s8.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/NNSupportFunctions/arm_nn_depthwise_conv_nt_t_s8.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/NNSupportFunctions/arm_nn_depthwise_conv_nt_t_padded_s8.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/NNSupportFunctions/arm_nn_add_q7.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/NNSupportFunctions/arm_nn_accumulate_q7_to_q15.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/NNSupportFunctions/arm_nntables.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/FullyConnectedFunctions/arm_fully_connected_s8.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/FullyConnectedFunctions/arm_fully_connected_q7_opt.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/FullyConnectedFunctions/arm_fully_connected_q7.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/FullyConnectedFunctions/arm_fully_connected_q15_opt.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/FullyConnectedFunctions/arm_fully_connected_q15.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/FullyConnectedFunctions/arm_fully_connected_mat_q7_vec_q15_opt.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/FullyConnectedFunctions/arm_fully_connected_mat_q7_vec_q15.c",
+                "src/edge-impulse-sdk/third_party/ruy/ruy/profiler/instrumentation.h",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/PoolingFunctions/arm_pool_q7_HWC.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/PoolingFunctions/arm_max_pool_s8_opt.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/PoolingFunctions/arm_max_pool_s8.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/PoolingFunctions/arm_avgpool_s8.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/ConcatenationFunctions/arm_concatenation_s8_x.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/ConcatenationFunctions/arm_concatenation_s8_w.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/ConcatenationFunctions/arm_concatenation_s8_y.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/ConcatenationFunctions/arm_concatenation_s8_z.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/ActivationFunctions/arm_relu6_s8.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/ActivationFunctions/arm_nn_activations_q7.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/ActivationFunctions/arm_nn_activations_q15.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/ActivationFunctions/arm_relu_q15.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/ActivationFunctions/arm_relu_q7.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/BasicMathFunctions/arm_elementwise_add_s8.c",
+                "src/edge-impulse-sdk/CMSIS/NN/Source/BasicMathFunctions/arm_elementwise_mul_s8.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_lms_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_lms_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_lms_norm_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/FilteringFunctions/arm_lms_norm_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Include/arm_vec_math.h",
+                "src/edge-impulse-sdk/CMSIS/DSP/Include/arm_sorting.h",
+                "src/edge-impulse-sdk/CMSIS/DSP/Include/arm_mve_tables_f16.h",
+                "src/edge-impulse-sdk/CMSIS/DSP/Include/arm_mve_tables.h",
+                "src/edge-impulse-sdk/CMSIS/DSP/Include/arm_math_f16.h",
+                "src/edge-impulse-sdk/CMSIS/DSP/Include/arm_math.h",
+                "src/edge-impulse-sdk/CMSIS/DSP/Include/arm_helium_utils.h",
+                "src/edge-impulse-sdk/CMSIS/DSP/Include/arm_const_structs_f16.h",
+                "src/edge-impulse-sdk/CMSIS/DSP/Include/arm_const_structs.h",
+                "src/edge-impulse-sdk/CMSIS/DSP/Include/arm_common_tables_f16.h",
+                "src/edge-impulse-sdk/CMSIS/DSP/Include/arm_common_tables.h",
+                "src/edge-impulse-sdk/CMSIS/DSP/PrivateInclude/arm_sorting.h",
+                "src/edge-impulse-sdk/CMSIS/DSP/PrivateInclude/arm_vec_filtering.h",
+                "src/edge-impulse-sdk/CMSIS/DSP/PrivateInclude/arm_vec_fft.h",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/CommonTables/CommonTablesF16.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/CommonTables/arm_mve_tables_f16.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/CommonTables/arm_mve_tables.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/CommonTables/arm_const_structs_f16.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/CommonTables/arm_const_structs.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/CommonTables/arm_common_tables_f16.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/CommonTables/arm_common_tables.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/BayesFunctions/arm_gaussian_naive_bayes_predict_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/DistanceFunctions/arm_dice_distance.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/DistanceFunctions/arm_cosine_distance_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/DistanceFunctions/arm_correlation_distance_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/DistanceFunctions/arm_cityblock_distance_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/DistanceFunctions/arm_chebyshev_distance_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/DistanceFunctions/arm_canberra_distance_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/DistanceFunctions/arm_braycurtis_distance_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance_template.h",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/DistanceFunctions/arm_boolean_distance.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/DistanceFunctions/arm_yule_distance.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/DistanceFunctions/arm_sokalsneath_distance.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/DistanceFunctions/arm_sokalmichener_distance.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/DistanceFunctions/arm_russellrao_distance.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/DistanceFunctions/arm_rogerstanimoto_distance.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/DistanceFunctions/arm_minkowski_distance_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/DistanceFunctions/arm_kulsinski_distance.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/DistanceFunctions/arm_jensenshannon_distance_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/DistanceFunctions/arm_jaccard_distance.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/DistanceFunctions/arm_hamming_distance.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/DistanceFunctions/arm_euclidean_distance_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/BasicMathFunctions/BasicMathFunctionsF16.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/BasicMathFunctions/arm_negate_q7.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/BasicMathFunctions/arm_negate_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/BasicMathFunctions/arm_negate_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/BasicMathFunctions/arm_negate_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/BasicMathFunctions/arm_negate_f16.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/BasicMathFunctions/arm_mult_q7.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/BasicMathFunctions/arm_mult_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/BasicMathFunctions/arm_mult_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/BasicMathFunctions/arm_mult_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/BasicMathFunctions/arm_mult_f16.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/BasicMathFunctions/arm_dot_prod_q7.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/BasicMathFunctions/arm_dot_prod_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/BasicMathFunctions/arm_dot_prod_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/BasicMathFunctions/arm_xor_u8.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/BasicMathFunctions/arm_dot_prod_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/BasicMathFunctions/arm_dot_prod_f16.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/BasicMathFunctions/arm_and_u8.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/BasicMathFunctions/arm_and_u32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/BasicMathFunctions/arm_and_u16.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/BasicMathFunctions/arm_add_q7.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/BasicMathFunctions/arm_add_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/BasicMathFunctions/arm_add_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/BasicMathFunctions/arm_xor_u32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/BasicMathFunctions/arm_add_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/BasicMathFunctions/arm_xor_u16.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/BasicMathFunctions/arm_add_f16.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/BasicMathFunctions/arm_sub_q7.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/BasicMathFunctions/arm_abs_q7.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/BasicMathFunctions/arm_abs_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/BasicMathFunctions/arm_abs_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/BasicMathFunctions/arm_sub_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/BasicMathFunctions/arm_abs_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/BasicMathFunctions/arm_abs_f16.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/BasicMathFunctions/arm_sub_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/BasicMathFunctions/arm_sub_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/BasicMathFunctions/arm_sub_f16.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/BasicMathFunctions/arm_shift_q7.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/BasicMathFunctions/arm_shift_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/BasicMathFunctions/arm_shift_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/BasicMathFunctions/arm_scale_q7.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/BasicMathFunctions/arm_scale_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/BasicMathFunctions/arm_scale_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/BasicMathFunctions/arm_scale_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/BasicMathFunctions/arm_scale_f16.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/BasicMathFunctions/arm_or_u8.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/BasicMathFunctions/arm_or_u32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/BasicMathFunctions/arm_or_u16.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/BasicMathFunctions/arm_offset_q7.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/BasicMathFunctions/arm_offset_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/BasicMathFunctions/arm_offset_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/BasicMathFunctions/arm_offset_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/BasicMathFunctions/arm_offset_f16.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/BasicMathFunctions/arm_not_u8.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/BasicMathFunctions/arm_not_u32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/BasicMathFunctions/arm_not_u16.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/ComplexMathFunctions/arm_cmplx_dot_prod_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/ComplexMathFunctions/arm_cmplx_dot_prod_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/ComplexMathFunctions/arm_cmplx_dot_prod_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/ComplexMathFunctions/arm_cmplx_conj_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/ComplexMathFunctions/arm_cmplx_conj_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/ComplexMathFunctions/arm_cmplx_conj_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/ComplexMathFunctions/arm_cmplx_mag_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/ComplexMathFunctions/arm_cmplx_mag_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/ComplexMathFunctions/arm_cmplx_mag_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/ComplexMathFunctions/arm_cmplx_mag_squared_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/ComplexMathFunctions/arm_cmplx_mag_squared_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/ComplexMathFunctions/arm_cmplx_mult_cmplx_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/ComplexMathFunctions/arm_cmplx_mult_cmplx_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/ComplexMathFunctions/arm_cmplx_mag_squared_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/ComplexMathFunctions/arm_cmplx_mult_real_f32.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/ComplexMathFunctions/arm_cmplx_mult_cmplx_q31.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/ComplexMathFunctions/arm_cmplx_mult_real_q15.c",
+                "src/edge-impulse-sdk/CMSIS/DSP/Source/ComplexMathFunctions/arm_cmplx_mult_real_q31.c",
+                "src/edge-impulse-sdk/CMSIS/Core/Include/tz_context.h",
+                "src/edge-impulse-sdk/CMSIS/Core/Include/pmu_armv8.h",
+                "src/edge-impulse-sdk/CMSIS/Core/Include/mpu_armv8.h",
+                "src/edge-impulse-sdk/CMSIS/Core/Include/mpu_armv7.h",
+                "src/edge-impulse-sdk/CMSIS/Core/Include/core_sc300.h",
+                "src/edge-impulse-sdk/CMSIS/Core/Include/core_sc000.h",
+                "src/edge-impulse-sdk/CMSIS/Core/Include/core_cm7.h",
+                "src/edge-impulse-sdk/CMSIS/Core/Include/core_cm55.h",
+                "src/edge-impulse-sdk/CMSIS/Core/Include/core_cm4.h",
+                "src/edge-impulse-sdk/CMSIS/Core/Include/core_cm35p.h",
+                "src/edge-impulse-sdk/CMSIS/Core/Include/core_cm33.h",
+                "src/edge-impulse-sdk/CMSIS/Core/Include/core_cm3.h",
+                "src/edge-impulse-sdk/CMSIS/Core/Include/core_cm23.h",
+                "src/edge-impulse-sdk/CMSIS/Core/Include/core_cm1.h",
+                "src/edge-impulse-sdk/CMSIS/Core/Include/core_cm0plus.h",
+                "src/edge-impulse-sdk/CMSIS/Core/Include/core_cm0.h",
+                "src/edge-impulse-sdk/CMSIS/Core/Include/core_armv8mml.h",
+                "src/edge-impulse-sdk/CMSIS/Core/Include/core_armv8mbl.h",
+                "src/edge-impulse-sdk/CMSIS/Core/Include/core_armv81mml.h",
+                "src/edge-impulse-sdk/CMSIS/Core/Include/cmsis_version.h",
+                "src/edge-impulse-sdk/CMSIS/Core/Include/cmsis_iccarm.h",
+                "src/edge-impulse-sdk/CMSIS/Core/Include/cmsis_gcc.h",
+                "src/edge-impulse-sdk/CMSIS/Core/Include/cmsis_compiler.h",
+                "src/edge-impulse-sdk/CMSIS/Core/Include/cmsis_armclang_ltm.h",
+                "src/edge-impulse-sdk/CMSIS/Core/Include/cmsis_armclang.h",
+                "src/edge-impulse-sdk/CMSIS/Core/Include/cmsis_armcc.h",
+                "src/edge-impulse-sdk/CMSIS/Core/Include/cachel1_armv7.h",
+                "src/edge-impulse-sdk/tensorflow/lite/version.h",
+                "src/edge-impulse-sdk/tensorflow/lite/type_to_tflitetype.h",
+                "src/edge-impulse-sdk/tensorflow/lite/string_type.h",
+                "src/edge-impulse-sdk/tensorflow/core/public/version.h",
+                "src/edge-impulse-sdk/tensorflow/lite/core/api/tensor_utils.h",
+                "src/edge-impulse-sdk/tensorflow/lite/c/common.h",
+                "src/edge-impulse-sdk/tensorflow/lite/core/api/tensor_utils.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/c/common.c",
+                "src/edge-impulse-sdk/tensorflow/lite/core/api/profiler.h",
+                "src/edge-impulse-sdk/tensorflow/lite/c/builtin_op_data.h",
+                "src/edge-impulse-sdk/tensorflow/lite/core/api/op_resolver.h",
+                "src/edge-impulse-sdk/tensorflow/lite/core/api/op_resolver.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/core/api/flatbuffer_conversions.h",
+                "src/edge-impulse-sdk/tensorflow/lite/core/api/flatbuffer_conversions.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/core/api/error_reporter.h",
+                "src/edge-impulse-sdk/tensorflow/lite/core/api/error_reporter.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/micro_profiler.h",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/micro_op_resolver.h",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/micro_error_reporter.h",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/test_helpers.h",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/test_helpers.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/compatibility.h",
+                "src/edge-impulse-sdk/tensorflow/lite/kernels/kernel_util_lite.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/recording_micro_allocator.h",
+                "src/edge-impulse-sdk/tensorflow/lite/kernels/kernel_util.h",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/simple_memory_allocator.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/recording_simple_memory_allocator.h",
+                "src/edge-impulse-sdk/tensorflow/lite/micro/simple_memory_allocator.h",
+                "src/edge-impulse-sdk/tensorflow/lite/kernels/op_macros.h",
+                "src/edge-impulse-sdk/tensorflow/lite/kernels/padding.h",
+                "src/edge-impulse-sdk/tensorflow/lite/kernels/internal/quantization_util.cpp",
+                "src/edge-impulse-sdk/tensorflow/lite/kernels/internal/types.h",
+                "src/edge-impulse-sdk/tensorflow/lite/kernels/internal/tensor_ctypes.h",
+                "src/edge-impulse-sdk/tensorflow/lite/kernels/internal/tensor.h",
+                "src/edge-impulse-sdk/tensorflow/lite/kernels/internal/strided_slice_logic.h",
+                "src/edge-impulse-sdk/tensorflow/lite/kernels/internal/optimized/neon_check.h",
+                "src/edge-impulse-sdk/tensorflow/lite/kernels/internal/min.h",
+                "src/edge-impulse-sdk/tensorflow/lite/kernels/internal/max.h",
+                "src/edge-impulse-sdk/tensorflow/lite/kernels/internal/cppmath.h",
+                "src/edge-impulse-sdk/tensorflow/lite/kernels/internal/compatibility.h",
+                "src/edge-impulse-sdk/tensorflow/lite/kernels/internal/common.h",
+                "src/edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/depthwiseconv_uint8.h",
+                "src/edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/depthwiseconv_float.h",
+                "src/edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/conv.h",
+                "src/edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/concatenation.h",
+                "src/edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/comparisons.h",
+                "src/edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/ceil.h",
+                "src/edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/binary_function.h",
+                "src/edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/arg_min_max.h",
+                "src/edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/add.h",
+                "src/edge-impulse-sdk/tensorflow/lite/kernels/internal/quantization_util.h",
+                "src/edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/l2normalization.h",
+                "src/edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/tanh.h",
+                "src/edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/sub.h",
+                "src/edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/strided_slice.h",
+                "src/edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/softmax.h",
+                "src/edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/round.h",
+                "src/edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/resize_nearest_neighbor.h",
+                "src/edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/requantize.h",
+                "src/edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/reduce.h",
+                "src/edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/quantize.h",
+                "src/edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/process_broadcast_shapes.h",
+                "src/edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/prelu.h",
+                "src/edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/pooling.h",
+                "src/edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/pad.h",
+                "src/edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/neg.h",
+                "src/edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/mul.h",
+                "src/edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/maximum_minimum.h",
+                "src/edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/logistic.h",
+                "src/edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/floor.h",
+                "src/edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/dequantize.h",
+                "src/edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/fully_connected.h",
+                "src/edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/integer_ops/tanh.h",
+                "src/edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/integer_ops/pooling.h",
+                "src/edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/integer_ops/mul.h",
+                "src/edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/integer_ops/logistic.h",
+                "src/edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/integer_ops/l2normalization.h",
+                "src/edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/integer_ops/fully_connected.h",
+                "src/edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/integer_ops/depthwise_conv.h",
+                "src/edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/integer_ops/conv.h",
+                "src/edge-impulse-sdk/tensorflow/lite/kernels/internal/reference/integer_ops/add.h",
+                "src/main.cpp",
+                "src/config/sam_e54_xpro/peripheral/sercom/spi_master/plib_sercom_spi_master_common.h",
+                "src/third_party/lan937x/switch_registers.h",
+                "src/third_party/lan937x/switch_registers.c",
+                "src/third_party/lan937x/lan937x_reg.h",
+                "src/config/sam_e54_xpro/peripheral/sercom/spi_master/plib_sercom0_spi_master.h",
+                "src/config/sam_e54_xpro/peripheral/sercom/spi_master/plib_sercom0_spi_master.c"
+            ]
+        }
+    ]
+}

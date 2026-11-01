@@ -1,0 +1,263 @@
+configVersion: 1.0.0
+componentName: HarmonyCore
+coreVersion: 5.9.0
+device: ATSAME54P20A
+library: []
+dependency:
+- dependencyPackage: class com.microchip.mcc.harmony.HarmonyModule
+  name: HarmonyCore
+  type: module
+  version: ''
+- dependencyPackage: ''
+  name: core
+  type: package
+  version: v3.13.1
+customDataClassName: com.microchip.utils_mh3.utils.persistence.CustomModuleData
+data:
+  attachments: {}
+  elementPosition:
+    attributes:
+      id: __ROOTVIEW
+    children:
+    - children:
+      - attributes:
+          id: HarmonyCore
+          x: '612'
+          y: '34'
+        type: ElementPosition
+      type: ElementPositions
+    type: ComponentGraph
+  symbols:
+    DMA_DEF:
+      attributes:
+        id: DMA_DEF
+      children:
+      - children:
+        - attributes:
+            id: enabled
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      type: File
+    DMA_HEADER:
+      attributes:
+        id: DMA_HEADER
+      children:
+      - children:
+        - attributes:
+            id: enabled
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      type: File
+    DMA_MAPPING:
+      attributes:
+        id: DMA_MAPPING
+      children:
+      - children:
+        - attributes:
+            id: enabled
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      type: File
+    DMA_SOURCE:
+      attributes:
+        id: DMA_SOURCE
+      children:
+      - children:
+        - attributes:
+            id: enabled
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      type: File
+    ENABLE_APP_FILE:
+      attributes:
+        id: ENABLE_APP_FILE
+        label: Generate Harmony Application Files
+      children:
+      - children:
+        - attributes:
+            id: HarmonyCore
+            value: 'true'
+          type: Dynamic
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    ENABLE_DRV_COMMON:
+      attributes:
+        id: ENABLE_DRV_COMMON
+        label: Generate Harmony Driver Common Files
+      children:
+      - children:
+        - attributes:
+            id: readOnly
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      - children:
+        - attributes:
+            id: HarmonyCore
+            value: 'false'
+          type: Dynamic
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    ENABLE_OSAL:
+      attributes:
+        id: ENABLE_OSAL
+        label: Enable OSAL
+      children:
+      - children:
+        - attributes:
+            id: HarmonyCore
+            value: 'true'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    ENABLE_SYS_CACHE:
+      attributes:
+        id: ENABLE_SYS_CACHE
+        label: Enable System Cache
+      children:
+      - children:
+        - attributes:
+            id: HarmonyCore
+            value: 'true'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    ENABLE_SYS_COMMON:
+      attributes:
+        id: ENABLE_SYS_COMMON
+        label: Generate Harmony System Service Common Files
+      children:
+      - children:
+        - attributes:
+            id: readOnly
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      - children:
+        - attributes:
+            id: HarmonyCore
+            value: 'true'
+          type: Dynamic
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    ENABLE_SYS_DMA:
+      attributes:
+        id: ENABLE_SYS_DMA
+        label: Enable System DMA
+      children:
+      - children:
+        - attributes:
+            id: audio_codec_wm8904
+            value: 'true'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    ENABLE_SYS_INT:
+      attributes:
+        id: ENABLE_SYS_INT
+        label: Enable System Interrupt
+      children:
+      - children:
+        - attributes:
+            id: HarmonyCore
+            value: 'true'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    ENABLE_SYS_PORTS:
+      attributes:
+        id: ENABLE_SYS_PORTS
+        label: Enable System Ports
+      children:
+      - children:
+        - attributes:
+            id: audio_codec_wm8904
+            value: 'true'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    ENABLE_SYS_RESET:
+      attributes:
+        id: ENABLE_SYS_RESET
+        label: Enable System Reset
+      children:
+      - children:
+        - attributes:
+            id: readOnly
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      - children:
+        - attributes:
+            id: HarmonyCore
+            value: 'true'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    PORTS_DEF:
+      attributes:
+        id: PORTS_DEF
+      children:
+      - children:
+        - attributes:
+            id: enabled
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      type: File
+    PORTS_HEADER:
+      attributes:
+        id: PORTS_HEADER
+      children:
+      - children:
+        - attributes:
+            id: enabled
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      type: File
+    PORTS_MAPPING:
+      attributes:
+        id: PORTS_MAPPING
+      children:
+      - children:
+        - attributes:
+            id: enabled
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      type: File
+  userData: {}

@@ -1,0 +1,183 @@
+configVersion: 1.0.0
+componentName: audio_codec_wm8904
+coreVersion: 5.9.0
+device: ATSAME54P20A
+library: []
+dependency:
+- dependencyPackage: class com.microchip.mcc.harmony.HarmonyModule
+  name: audio_codec_wm8904
+  type: module
+  version: ''
+- dependencyPackage: ''
+  name: audio
+  type: package
+  version: v3.7.0
+customDataClassName: com.microchip.utils_mh3.utils.persistence.CustomModuleData
+data:
+  attachments:
+    children:
+    - children:
+      - attributes:
+          id: DRV_I2C
+        children:
+        - children:
+          - attributes:
+              id: targetComponentID
+            children:
+            - type: Value
+              value: drv_i2c_0
+            type: String
+          - attributes:
+              id: targetAttachmentID
+            children:
+            - type: Value
+              value: drv_i2c
+            type: String
+          type: Attributes
+        type: DirectDependency
+      - attributes:
+          id: DRV_I2S
+        children:
+        - children:
+          - attributes:
+              id: targetComponentID
+            children:
+            - type: Value
+              value: a_drv_i2s_0
+            type: String
+          - attributes:
+              id: targetAttachmentID
+            children:
+            - type: Value
+              value: drv_i2s
+            type: String
+          type: Attributes
+        type: DirectDependency
+      type: Attachments
+    type: audio_codec_wm8904
+  elementPosition:
+    attributes:
+      id: __ROOTVIEW
+    children:
+    - children:
+      - attributes:
+          id: audio_codec_wm8904
+          x: '605'
+          y: '537'
+        type: ElementPosition
+      type: ElementPositions
+    type: ComponentGraph
+  symbols:
+    DRV_CODEC_WM8904_INST_IDX0:
+      attributes:
+        id: DRV_CODEC_WM8904_INST_IDX0
+        label: DRV_CODEC_WM8904_INST_IDX0
+      type: Boolean
+    DRV_WM8904_AUDIO_DATA_FORMAT:
+      attributes:
+        id: DRV_WM8904_AUDIO_DATA_FORMAT
+        label: Audio Data Format
+      children:
+      - children:
+        - attributes:
+            value: '3'
+          type: User
+        type: Values
+      type: KeyValueSet
+    DRV_WM8904_BAUD_RATE:
+      attributes:
+        id: DRV_WM8904_BAUD_RATE
+        label: Sampling Rate
+      children:
+      - children:
+        - attributes:
+            value: '16000'
+          type: User
+        type: Values
+      type: Integer
+    DRV_WM8904_CLIENTS_NUMBER:
+      attributes:
+        id: DRV_WM8904_CLIENTS_NUMBER
+        label: Number of WM8904 Driver Clients
+      type: Integer
+    DRV_WM8904_ENABLE_MIC_BIAS:
+      attributes:
+        id: DRV_WM8904_ENABLE_MIC_BIAS
+        label: Enable Microphone Bias for electret microphones
+      children:
+      - children:
+        - attributes:
+            id: visible
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    DRV_WM8904_ENABLE_MIC_INPUT:
+      attributes:
+        id: DRV_WM8904_ENABLE_MIC_INPUT
+        label: Enable Microphone Input
+      children:
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    DRV_WM8904_I2C:
+      attributes:
+        id: DRV_WM8904_I2C
+        label: I2C Driver used
+      children:
+      - children:
+        - attributes:
+            id: audio_codec_wm8904
+            value: DRV_I2C_0
+          type: Dynamic
+        type: Values
+      type: String
+    DRV_WM8904_I2S:
+      attributes:
+        id: DRV_WM8904_I2S
+        label: I2S Driver used
+      children:
+      - children:
+        - attributes:
+            id: audio_codec_wm8904
+            value: DRV_I2S_0
+          type: Dynamic
+        type: Values
+      type: String
+    DRV_WM8904_MASTER_MODE:
+      attributes:
+        id: DRV_WM8904_MASTER_MODE
+        label: Usage Mode
+      children:
+      - children:
+        - attributes:
+            value: '1'
+          type: User
+        type: Values
+      type: KeyValueSet
+    DRV_WM8904_MIC_GAIN:
+      attributes:
+        id: DRV_WM8904_MIC_GAIN
+        label: Microphone Gain in range 0(Min) to 31(Max)
+      type: Integer
+    DRV_WM8904_VOLUME:
+      attributes:
+        id: DRV_WM8904_VOLUME
+        label: Volume for the Codec in range 0(Min) to 255(Max)
+      type: Integer
+    USE_DRV_CODEC_WM8904:
+      attributes:
+        id: USE_DRV_CODEC_WM8904
+        label: USE_DRV_CODEC_WM8904
+      type: Boolean
+  userData: {}

@@ -1,0 +1,317 @@
+configVersion: 1.0.0
+componentName: a_i2s
+coreVersion: 5.9.0
+device: ATSAME54P20A
+library: []
+dependency:
+- dependencyPackage: class com.microchip.mcc.harmony.HarmonyModule
+  name: a_i2s
+  type: module
+  version: ''
+- dependencyPackage: ''
+  name: audio
+  type: package
+  version: v3.7.0
+customDataClassName: com.microchip.utils_mh3.utils.persistence.CustomModuleData
+data:
+  attachments:
+    children:
+    - children:
+      - attributes:
+          id: I2S_I2S
+        children:
+        - children:
+          - attributes:
+              id: targetComponentID
+            children:
+            - type: Value
+              value: a_drv_i2s_0
+            type: String
+          - attributes:
+              id: targetAttachmentID
+            children:
+            - type: Value
+              value: drv_i2s_I2S_dependency
+            type: String
+          type: Attributes
+        type: DirectCapability
+      type: Attachments
+    type: a_i2s
+  elementPosition:
+    attributes:
+      id: __ROOTVIEW
+    children:
+    - children:
+      - attributes:
+          id: a_i2s
+          x: '621'
+          y: '416'
+        type: ElementPosition
+      type: ElementPositions
+    type: ComponentGraph
+  symbols:
+    I2S_CLKCTRL_0_BITDELAY:
+      attributes:
+        id: I2S_CLKCTRL_0_BITDELAY
+        label: Data Delay from Frame Sync
+      type: KeyValueSet
+    I2S_CLKCTRL_0_CLKMODE:
+      attributes:
+        id: I2S_CLKCTRL_0_CLKMODE
+        label: Master/Slave Mode
+      children:
+      - children:
+        - attributes:
+            value: '1'
+          type: User
+        type: Values
+      type: KeyValueSet
+    I2S_CLKCTRL_0_ENABLE:
+      attributes:
+        id: I2S_CLKCTRL_0_ENABLE
+        label: Clock Unit 0 Enable
+      children:
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    I2S_CLKCTRL_0_FSINV:
+      attributes:
+        id: I2S_CLKCTRL_0_FSINV
+        label: Frame Sync Output Invert
+      type: KeyValueSet
+    I2S_CLKCTRL_0_FSOUTINV:
+      attributes:
+        id: I2S_CLKCTRL_0_FSOUTINV
+        label: Frame Sync Output Invert
+      type: KeyValueSet
+    I2S_CLKCTRL_0_MCKDIV:
+      attributes:
+        id: I2S_CLKCTRL_0_MCKDIV
+        label: Master Clock Division Factor
+      children:
+      - children:
+        - attributes:
+            value: '0'
+          type: User
+        type: Values
+      type: Integer
+    I2S_CLKCTRL_0_MCKOUTDIV:
+      attributes:
+        id: I2S_CLKCTRL_0_MCKOUTDIV
+        label: Master Clock Ouput Division Factor
+      children:
+      - children:
+        - attributes:
+            value: '0'
+          type: User
+        type: Values
+      type: Integer
+    I2S_CLKCTRL_0_SLOTSIZE:
+      attributes:
+        id: I2S_CLKCTRL_0_SLOTSIZE
+        label: Slot Size
+      children:
+      - children:
+        - attributes:
+            value: '3'
+          type: User
+        type: Values
+      type: KeyValueSet
+    I2S_CLKCTRL_1_BITDELAY:
+      attributes:
+        id: I2S_CLKCTRL_1_BITDELAY
+        label: Data Delay from Frame Sync
+      type: KeyValueSet
+    I2S_CLKCTRL_1_CLKMODE:
+      attributes:
+        id: I2S_CLKCTRL_1_CLKMODE
+        label: Master/Slave Mode
+      children:
+      - children:
+        - attributes:
+            value: '0'
+          type: User
+        type: Values
+      type: KeyValueSet
+    I2S_CLKCTRL_1_ENABLE:
+      attributes:
+        id: I2S_CLKCTRL_1_ENABLE
+        label: Clock Unit 1 Enable
+      children:
+      - children:
+        - attributes:
+            value: 'false'
+          type: User
+        type: Values
+      type: Boolean
+    I2S_CLKCTRL_1_FSINV:
+      attributes:
+        id: I2S_CLKCTRL_1_FSINV
+        label: Frame Sync Output Invert
+      type: KeyValueSet
+    I2S_CLKCTRL_1_FSOUTINV:
+      attributes:
+        id: I2S_CLKCTRL_1_FSOUTINV
+        label: Frame Sync Output Invert
+      type: KeyValueSet
+    I2S_CLKCTRL_1_MCKDIV:
+      attributes:
+        id: I2S_CLKCTRL_1_MCKDIV
+        label: Master Clock Division Factor
+      children:
+      - children:
+        - attributes:
+            value: '0'
+          type: User
+        type: Values
+      type: Integer
+    I2S_CLKCTRL_1_MCKOUTDIV:
+      attributes:
+        id: I2S_CLKCTRL_1_MCKOUTDIV
+        label: Master Clock Ouput Division Factor
+      children:
+      - children:
+        - attributes:
+            value: '0'
+          type: User
+        type: Values
+      type: Integer
+    I2S_CLKCTRL_1_SLOTSIZE:
+      attributes:
+        id: I2S_CLKCTRL_1_SLOTSIZE
+        label: Slot Size
+      children:
+      - children:
+        - attributes:
+            value: '3'
+          type: User
+        type: Values
+      type: KeyValueSet
+    I2S_DMA_MODE:
+      attributes:
+        id: I2S_DMA_MODE
+        label: DMA Mode
+      type: Boolean
+    I2S_INSTANCE_NAME:
+      attributes:
+        id: I2S_INSTANCE_NAME
+        label: I2S_INSTANCE_NAME
+      type: String
+    I2S_INTERRUPT_MODE:
+      attributes:
+        id: I2S_INTERRUPT_MODE
+        label: Interrupt Mode
+      type: Boolean
+    I2S_LRCLK_INVERT:
+      attributes:
+        id: I2S_LRCLK_INVERT
+        label: Invert
+      type: KeyValueSet
+    I2S_LRCLK_PIN_DEFINE:
+      attributes:
+        id: I2S_LRCLK_PIN_DEFINE
+        label: Frame Select Pin
+      type: KeyValueSet
+    I2S_NUM_GENERIC_CLOCKS:
+      attributes:
+        id: I2S_NUM_GENERIC_CLOCKS
+        label: I2S_NUM_GENERIC_CLOCKS
+      type: Integer
+    I2S_RXCTRL_CLKSEL:
+      attributes:
+        id: I2S_RXCTRL_CLKSEL
+        label: Clock Unit Selection
+      type: KeyValueSet
+    I2S_RXCTRL_DATASIZE:
+      attributes:
+        id: I2S_RXCTRL_DATASIZE
+        label: Data Word Size
+      children:
+      - children:
+        - attributes:
+            value: '0'
+          type: User
+        type: Values
+      type: KeyValueSet
+    I2S_RXCTRL_MONO:
+      attributes:
+        id: I2S_RXCTRL_MONO
+        label: Stereo/Mono
+      type: KeyValueSet
+    I2S_RXCTRL_SLOTADJ:
+      attributes:
+        id: I2S_RXCTRL_SLOTADJ
+        label: Data Slot Formatting Adjust
+      children:
+      - children:
+        - attributes:
+            value: '1'
+          type: User
+        type: Values
+      type: KeyValueSet
+    I2S_RXCTRL_WORDADJ:
+      attributes:
+        id: I2S_RXCTRL_WORDADJ
+        label: Data Word Formatting Adjust
+      type: KeyValueSet
+    I2S_RX_SERIALIZER_ENABLE:
+      attributes:
+        id: I2S_RX_SERIALIZER_ENABLE
+        label: RX Serializer Enable
+      type: Boolean
+    I2S_TXCTRL_CLKSEL:
+      attributes:
+        id: I2S_TXCTRL_CLKSEL
+        label: Clock Unit Selection
+      type: KeyValueSet
+    I2S_TXCTRL_DATASIZE:
+      attributes:
+        id: I2S_TXCTRL_DATASIZE
+        label: Data Word Size
+      children:
+      - children:
+        - attributes:
+            value: '0'
+          type: User
+        type: Values
+      type: KeyValueSet
+    I2S_TXCTRL_MONO:
+      attributes:
+        id: I2S_TXCTRL_MONO
+        label: Stereo/Mono
+      type: KeyValueSet
+    I2S_TXCTRL_SLOTADJ:
+      attributes:
+        id: I2S_TXCTRL_SLOTADJ
+        label: Data Slot Formatting Adjust
+      type: KeyValueSet
+    I2S_TXCTRL_WORDADJ:
+      attributes:
+        id: I2S_TXCTRL_WORDADJ
+        label: Data Word Formatting Adjust
+      children:
+      - children:
+        - attributes:
+            value: '1'
+          type: User
+        type: Values
+      type: KeyValueSet
+    I2S_TX_SERIALIZER_ENABLE:
+      attributes:
+        id: I2S_TX_SERIALIZER_ENABLE
+        label: TX Serializer Enable
+      type: Boolean
+    RECEIVE_DATA_REGISTER:
+      attributes:
+        id: RECEIVE_DATA_REGISTER
+        label: RECEIVE_DATA_REGISTER
+      type: String
+    TRANSMIT_DATA_REGISTER:
+      attributes:
+        id: TRANSMIT_DATA_REGISTER
+        label: TRANSMIT_DATA_REGISTER
+      type: String
+  userData: {}

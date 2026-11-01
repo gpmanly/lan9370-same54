@@ -1,0 +1,87 @@
+configVersion: 1.0.0
+componentName: lib_wolfssl
+coreVersion: 5.9.0
+device: ATSAME54P20A
+library: []
+dependency:
+- dependencyPackage: class com.microchip.mcc.harmony.HarmonyModule
+  name: lib_wolfssl
+  type: module
+  version: ''
+- dependencyPackage: ''
+  name: crypto
+  type: package
+  version: v3.8.1
+- dependencyPackage: ''
+  name: wolfssl
+  type: package
+  version: v5.4.0
+customDataClassName: com.microchip.utils_mh3.utils.persistence.CustomModuleData
+data:
+  attachments:
+    children:
+    - children:
+      - attributes:
+          id: WolfSSL_Crypto_Dependency
+        children:
+        - children:
+          - attributes:
+              id: targetComponentID
+            children:
+            - type: Value
+              value: lib_wolfcrypt
+            type: String
+          - attributes:
+              id: targetAttachmentID
+            children:
+            - type: Value
+              value: lib_wolfcrypt
+            type: String
+          type: Attributes
+        type: DirectDependency
+      - attributes:
+          id: lib_wolfssl
+        children:
+        - children:
+          - attributes:
+              id: targetComponentID
+            children:
+            - type: Value
+              value: TCP/IP STACK
+            type: String
+          - attributes:
+              id: targetAttachmentID
+            children:
+            - type: Value
+              value: PRESENTATION LAYER:net_Pres:Net_Pres_Crypto_Dependency
+            type: String
+          type: Attributes
+        type: DirectCapability
+      type: Attachments
+    type: lib_wolfssl
+  elementPosition:
+    attributes:
+      id: __ROOTVIEW
+    children:
+    - children:
+      - attributes:
+          id: lib_wolfssl
+          x: '221'
+          y: '452'
+        type: ElementPosition
+      type: ElementPositions
+    type: ComponentGraph
+  symbols:
+    wolfssl:
+      attributes:
+        id: wolfssl
+        label: Use wolfSSL?
+      children:
+      - children:
+        - attributes:
+            id: net_Pres
+            value: 'true'
+          type: Dynamic
+        type: Values
+      type: Boolean
+  userData: {}

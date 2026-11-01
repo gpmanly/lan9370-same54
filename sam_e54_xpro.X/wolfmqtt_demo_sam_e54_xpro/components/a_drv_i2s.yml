@@ -1,0 +1,31 @@
+configVersion: 1.0.0
+componentName: a_drv_i2s
+coreVersion: 5.9.0
+device: ATSAME54P20A
+library: []
+dependency:
+- dependencyPackage: class com.microchip.mcc.harmony.HarmonyModule
+  name: a_drv_i2s
+  type: module
+  version: ''
+- dependencyPackage: ''
+  name: audio
+  type: package
+  version: v3.7.0
+customDataClassName: com.microchip.utils_mh3.utils.persistence.CustomModuleData
+data:
+  attachments: {}
+  elementPosition:
+    attributes:
+      id: __ROOTVIEW
+    children:
+    - children:
+      - attributes:
+          id: a_drv_i2s
+          x: '842'
+          y: '382'
+        type: ElementPosition
+      type: ElementPositions
+    type: ComponentGraph
+  symbols: {}
+  userData: {}
