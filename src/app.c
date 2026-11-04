@@ -82,6 +82,19 @@ static APP_DATA appData;
 #define APP_SWITCH_RESET_ASSERT_MS      10U     // nRST held low
 #define APP_SWITCH_RESET_RECOVERY_MS    150U    // wait after release before SMI access
 
+/* Port 5 (host RMII) PORT_XMII_CTL1 register, bit 2 ("MII / RMII Modes").
+   For RMII, this bit selects which side generates the shared 50 MHz
+   REFCLK: 1 = REFCLK is received at the RXC pin, 0 = REFCLK is generated
+   from the TXC pin. The LAN9370 defaults to 1 (clock receiver), but the
+   SAM E54 Curiosity Ultra's Ethernet PHY header is hardware-wired to also
+   receive REFCLK (see its user guide, pin 24: "REFCLK (in)") -- with both
+   sides configured as receivers, no 50 MHz RMII reference clock was ever
+   actually driven onto the shared line, which silently broke RMII receive
+   framing on both ends while leaving transmit mostly unaffected. Clearing
+   this bit makes the LAN9370 generate and drive the clock instead. */
+#define APP_LAN9370_PORT5_XMII_CTL1_REG             0x5301U
+#define APP_LAN9370_PORT5_XMII_CTL1_RMII_CLK_IN_BIT 0x04U
+
 static void APP_DelayMs(uint32_t ms)
 {
     CoreDebug->DEMCR |= CoreDebug_DEMCR_TRCENA_Msk;
@@ -221,6 +234,11 @@ void APP_Initialize ( void )
     SERCOM0_SPI_Initialize();
     APP_LAN9370_SPI_Initialize();
     APP_LAN9370_CommandsInit();
+
+    /* Fix the RMII clock direction on port 5 -- see the register comment
+       above for why this is needed. */
+    (void) APP_LAN9370_RegModify(APP_LAN9370_PORT5_XMII_CTL1_REG,
+                                  APP_LAN9370_PORT5_XMII_CTL1_RMII_CLK_IN_BIT, 0x00U);
 
     /* Place the application state machine in its initial state. */
     appData.state = APP_TCPIP_WAIT_INIT;
